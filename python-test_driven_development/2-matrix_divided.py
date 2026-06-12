@@ -29,11 +29,13 @@ def matrix_divided(matrix, div):
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
     
-    # نمنع فقط NaN لأن قسمنها تسبب مشاكل، ونسمح بالـ inf
     if div != div:
         raise TypeError("div must be a number")
 
     if div == 0:
         raise ZeroDivisionError("division by zero")
+
+    if div in (float('inf'), float('-inf')):
+        return [[0.0 for _ in row] for row in matrix]
 
     return [[round(elem / div, 2) for elem in row] for row in matrix]
