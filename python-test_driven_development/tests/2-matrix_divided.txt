@@ -24,7 +24,7 @@ Test with a float divisor:
     >>> matrix_divided([[2, 4], [6, 8]], 2.0)
     [[1.0, 2.0], [3.0, 4.0]]
 
-Test exception for non-matrix type (e.g., integer):
+Test exception for non-matrix type:
     >>> matrix_divided(123, 3)
     Traceback (most recent call last):
         ...
@@ -38,7 +38,7 @@ Test exception for list of non-lists:
 
 Test exception for non-numeric elements inside matrix:
     >>> matrix_divided([[1, "Two"], [3, 4]], 2)
-    Traceback (running):
+    Traceback (most recent call last):
         ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
