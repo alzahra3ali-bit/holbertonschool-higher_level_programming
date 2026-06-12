@@ -1,4 +1,3 @@
-cat << 'EOF' > 2-matrix_divided.py
 #!/usr/bin/python3
 """
 This module provides a function that divides all elements of a matrix.
@@ -36,4 +35,3 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
 
     return [[round(elem / div, 2) for elem in row] for row in matrix]
-EOF
