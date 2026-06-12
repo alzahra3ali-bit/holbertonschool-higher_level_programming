@@ -13,14 +13,10 @@ def add_integer(a, b=98):
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
 
-    try:
-        a = int(a)
-    except (OverflowError, ValueError):
+    # كشف ومنع قيم NaN و M_inf و Inf مباشرة لتخطي فحص الـ Float overflow
+    if a != a or a in (float('inf'), float('-inf')):
         raise TypeError("a must be an integer")
-
-    try:
-        b = int(b)
-    except (OverflowError, ValueError):
+    if b != b or b in (float('inf'), float('-inf')):
         raise TypeError("b must be an integer")
 
-    return a + b
+    return int(a) + int(b)
