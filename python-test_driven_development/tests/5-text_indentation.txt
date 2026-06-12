@@ -1,0 +1,31 @@
+The ``5-text_indentation`` module
+=================================
+
+Using ``text_indentation``
+--------------------------
+
+Import the function:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test normal text indentation:
+    >>> text_indentation("Hello. World? Testing: Python")
+    Hello.
+    <BLANKLINE>
+    World?
+    <BLANKLINE>
+    Testing:
+    <BLANKLINE>
+    Python
+
+Test exception for integer instead of string:
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Test with multiple spaces around punctuation:
+    >>> text_indentation("No spaces   .   Here   ?   ")
+    No spaces   .
+    <BLANKLINE>
+    Here   ?
+    <BLANKLINE>
