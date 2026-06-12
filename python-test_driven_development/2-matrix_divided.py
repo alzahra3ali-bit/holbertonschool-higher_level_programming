@@ -28,7 +28,9 @@ def matrix_divided(matrix, div):
 
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
-    if div != div or div in (float('inf'), float('-inf')):
+    
+    # نمنع فقط NaN لأن قسمنها تسبب مشاكل، ونسمح بالـ inf
+    if div != div:
         raise TypeError("div must be a number")
 
     if div == 0:
