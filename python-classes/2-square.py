@@ -9,7 +9,7 @@ class Square:
         """Initialize the square with validation on size.
 
         Args:
-            size (int): The size of the square's side. Defualts to 0.
+            size (int): The size of the square's side. Defaults to 0.
 
         Raises:
             TypeError: If size is not an integer.
