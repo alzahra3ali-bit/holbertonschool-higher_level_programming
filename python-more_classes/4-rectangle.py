@@ -100,7 +100,7 @@ class Rectangle:
         return "\n".join(rect_str)
 
     def __repr__(self):
-        """Return a string representation that can recreate the instance via eval().
+        """Return a string representation to recreate the instance via eval().
 
         Returns:
             str: A string in the format Rectangle(width, height).
