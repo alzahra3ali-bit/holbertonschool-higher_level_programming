@@ -47,4 +47,3 @@ First, import the class:
     >>> dup_list.append(2)
     >>> dup_list.print_sorted()
     [2, 5, 5]
-EOF
