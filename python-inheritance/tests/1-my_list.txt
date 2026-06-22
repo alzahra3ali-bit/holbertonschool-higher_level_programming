@@ -1,0 +1,50 @@
+mkdir -p tests && cat << 'EOF' > tests/1-my_list.txt
+===============================
+How to use MyList class
+===============================
+
+First, import the class:
+    >>> MyList = __import__('1-my_list').MyList
+
+1. Test normal case with unsorted integers:
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+2. Test with an empty list:
+    >>> empty_list = MyList()
+    >>> empty_list.print_sorted()
+    []
+
+3. Test with already sorted elements:
+    >>> sorted_list = MyList()
+    >>> sorted_list.append(10)
+    >>> sorted_list.append(20)
+    >>> sorted_list.print_sorted()
+    [10, 20]
+
+4. Test with negative numbers:
+    >>> neg_list = MyList()
+    >>> neg_list.append(-5)
+    >>> neg_list.append(-1)
+    >>> neg_list.append(-10)
+    >>> neg_list.print_sorted()
+    [-10, -5, -1]
+
+5. Test with a mix of identical numbers:
+    >>> dup_list = MyList()
+    >>> dup_list.append(5)
+    >>> dup_list.append(5)
+    >>> dup_list.append(2)
+    >>> dup_list.print_sorted()
+    [2, 5, 5]
+EOF
