@@ -6,11 +6,11 @@ class BaseGeometry:
     """Represents a base geometry class."""
 
     def area(self):
-        """Raises an Exception indicating that area is not implemented."""
+        """Raises an Exception with the message area() is not implemented."""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """Validates a value as an integer greater than 0.
+        """Validates a value as an integer.
 
         Args:
             name (str): The name of the parameter.
