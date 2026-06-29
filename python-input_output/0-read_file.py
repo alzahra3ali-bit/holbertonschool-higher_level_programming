@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-"""defind function that Open file"""
+"""This module contains a function that reads a text file."""
+
+
 def read_file(filename=""):
-    """read And Print the file"""
-    with open(filename,"r", encoding="UTF8") as f:
-        print(f.read() , end="")
+    """Reads a UTF8 text file and prints it to stdout."""
+    with open(filename, "r", encoding="utf-8") as f:
+        print(f.read(), end="")
