@@ -13,12 +13,12 @@ def fetch_and_save_posts():
     postes = req.json()
     fpost = []
     for post in postes:
-    temp = { 
+        temp = { 
             id':post['id']',
             title':post['title']',
             body':post['body']']
-    }
-    fpost.append(temp)
+        }
+        fpost.append(temp)
 with open('posts.csv','w',newline='',encoding='utf-8') as f:
     header = ['id','title','body']
     writer = csv.DictWriter(f, fildename=headers)
