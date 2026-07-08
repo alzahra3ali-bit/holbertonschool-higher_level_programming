@@ -14,7 +14,7 @@ def fetch_and_save_posts():
     fpost = []
     for post in postes:
         temp = { 
-            id':post['id']',
+            id':post['id'],
             title':post['title']',
             body':post['body']']
         }
