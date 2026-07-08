@@ -21,6 +21,6 @@ def fetch_and_save_posts():
         fpost.append(temp)
 with open('posts.csv','w',newline='',encoding='utf-8') as f:
     header = ['id','title','body']
-    writer = csv.DictWriter(f, fildename=header)
+    writer = csv.DictWriter(f, fildenames=header)
     writer.writeheader()
     writer.writerows(fpost)
