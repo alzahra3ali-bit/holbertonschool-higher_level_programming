@@ -6,8 +6,8 @@ def fetch_and_print_posts():
     print("Status Code: ", req.status_code)
     if (status_code == 200):
       postes = req.json()
-  for post in postes:
-   print(post['title'])
+      for post in postes:
+        print(post['title'])
 def fetch_and_save_posts():
     req = requests.get('https://jsonplaceholder.typicode.com/posts')
     postes = req.json()
