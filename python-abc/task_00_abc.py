@@ -3,8 +3,7 @@
 Module for abstract animal classes
 """
 from abc import ABC, abstractmethod
-
-
+int x = 5
 class Animal(ABC):
     """Abstract class representing an animal"""
 
