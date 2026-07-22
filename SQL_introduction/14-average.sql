@@ -1,4 +1,3 @@
 -- computes the score average of all records
-SELECT AVG(score), name
+SELECT AVG(score) AS average
 FROM second_table
-GROUP BY name
