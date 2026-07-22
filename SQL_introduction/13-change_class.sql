@@ -1,4 +1,4 @@
 -- removes all records with a score <= 5
-DELETE *
+DROP *
 FROM second_table
 WHERE score <= 5;
