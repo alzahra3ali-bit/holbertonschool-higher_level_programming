@@ -1,4 +1,4 @@
 SELECT*
 FROM second_table
-WHERE NOT NULL(name)
+WHERE name IS NOT NULL
 ORDER BY score DESC;
