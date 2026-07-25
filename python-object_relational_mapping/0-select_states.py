@@ -4,32 +4,34 @@ import sys
 import MySQLdb
 
 if __name__ == "__main__":
+    # Ensure correct number of arguments are passed
+    if len(sys.argv) < 4:
+        sys.exit(1)
+
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
 
-    # Connect to MySQL server running on localhost at port 3306
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=username,
-        passwd=password,
-        db=db_name
-    )
+    try:
+        # Connect to MySQL server running on localhost at port 3306
+        db = MySQLdb.connect(
+            host="localhost",
+            port=3306,
+            user=username,
+            passwd=password,
+            db=db_name
+        )
 
-    # Create a cursor object to execute queries
-    cursor = db.cursor()
+        cursor = db.cursor()
+        cursor.execute("SELECT * FROM states ORDER BY id ASC;")
+        
+        rows = cursor.fetchall()
+        for row in rows:
+            print(row)
 
-    # Execute SQL query sorted in ascending order by states.id
-    cursor.execute("SELECT * FROM states ORDER BY id ASC;")
+        cursor.close()
+        db.close()
 
-    # Fetch all records
-    rows = cursor.fetchall()
-
-    # Display the results
-    for row in rows:
-        print(row)
-
-    # Clean up cursor and database connection
-    cursor.close()
-    db.close()
+    except MySQLdb.Error as e:
+        print(f"MySQL Error: {e}", file=sys.stderr)
+        sys.exit(1)
