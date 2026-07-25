@@ -7,7 +7,8 @@ import sys
 import MySQLdb
 
 
-if __name__ == "__main__":
+def filter_states_by_input():
+    """Filters and prints states matching user input from database."""
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -16,7 +17,6 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
     cur = db.cursor()
-    # استخدام format والمطابقة الحساسة لحالة الأحرف BINARY
     query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC"\
         .format(sys.argv[4])
     cur.execute(query)
@@ -25,3 +25,7 @@ if __name__ == "__main__":
         print(row)
     cur.close()
     db.close()
+
+
+if __name__ == "__main__":
+    filter_states_by_input()
